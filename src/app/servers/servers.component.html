@@ -1,0 +1,36 @@
+<label for="">Add server</label>
+<!-- <input
+    type="text"
+    class="form-control"
+    (input) = "onUpdateServerName($event)"
+> -->
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)] = "serverName"
+>
+<!-- <p>{{ serverName }}</p> -->
+
+<div>
+    <button
+        class="btn btn-primary"
+        [disabled]="!allowAddServer"
+        (click)="onCreateServer()"
+    >Add server</button>
+</div>
+
+<p>{{ serverCreationStatus }}</p>
+<app-server></app-server>
+<app-server></app-server>
+
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)] = "username"
+>
+<button
+    class="btn btn-secondary"
+    [disabled] = '!!!username'
+    (click) = 'username = ""'
+>Clear input</button>
+<p>{{ username }}</p>
