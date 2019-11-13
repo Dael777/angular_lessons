@@ -32,8 +32,9 @@
 >Display Details</button>
 <p *ngIf="showSecretContent">{{ secretContent }}</p>
 <p
-    *ngFor="let click of clicks"
-    [ngClass]="{ blue: click.current >= 5}">
+    *ngFor="let click of clicks; let i = index"
+    [ngStyle] = "{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+    [ngClass]="{ 'white-text': i >= 4 } ">
     {{ click.date }}
 </p>
 
