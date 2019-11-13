@@ -17,7 +17,11 @@ export class ServersComponent implements OnInit {
   serverName = '';
   serverCreated = false;
   servers = ['TestServer', 'TestServer2'];
-  username = '';
+  // username = '';
+  secretContent = 'Secret Content';
+  showSecretContent = false;
+  clicks = [];
+  currentClick = 0;
 
   constructor() {
     setTimeout(() => {
@@ -33,7 +37,12 @@ export class ServersComponent implements OnInit {
     this.servers.push(this.serverName);
   }
 
-  onUpdateServerName(event: Event) {
-    this.serverName = (<HTMLInputElement>event.target).value;
+  onDisplayDetails() {
+    this.showSecretContent = !this.showSecretContent;
+    this.clicks = [...this.clicks, { current: ++this.currentClick, date: new Date() }]
   }
+
+  // onUpdateServerName(event: Event) {
+  //   this.serverName = (<HTMLInputElement>event.target).value;
+  // }
 }

@@ -26,7 +26,18 @@
 </ng-template>
 <app-server *ngFor="let server of servers"></app-server>
 
-<input
+<button
+    class="btn btn-info"
+    (click)="onDisplayDetails()"
+>Display Details</button>
+<p *ngIf="showSecretContent">{{ secretContent }}</p>
+<p
+    *ngFor="let click of clicks"
+    [ngClass]="{ blue: click.current >= 5}">
+    {{ click.date }}
+</p>
+
+<!-- <input
     type="text"
     class="form-control"
     [(ngModel)] = "username"
@@ -36,4 +47,4 @@
     [disabled] = '!!!username'
     (click) = 'username = ""'
 >Clear input</button>
-<p>{{ username }}</p>
+<p>{{ username }}</p> -->
